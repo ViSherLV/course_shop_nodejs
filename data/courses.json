@@ -1,1 +1,8 @@
-["aa",{"title":"React","price":"5000","img":"react.com","id":"cea148c0-734b-41a5-9997-ab23352e36d4"},{"title":"React","price":"5000","img":"react.com","id":"dd0d2428-3cae-4b8a-a64c-aba724aeac95"},{"title":"React","price":"122","img":"111","id":"4dfba8f5-d0cb-47ab-b0f1-8a0f079b1f96"},{"title":"React","price":"122","img":"111","id":"a5532797-d3d1-4bce-ba3f-db158a17a74e"},{"title":"f","price":"2","img":"f","id":"deebe84f-198e-4de4-bc5b-951509b86326"},{"title":"f","price":"2","img":"f","id":"9d35d9c0-5a12-4021-92e8-f6e755b5f321"},{"title":"Redis","price":"1222","img":"11","id":"aee968a1-e459-4a5f-85e7-954469deb4eb"},{"title":"Redis","price":"1222","img":"11","id":"be927593-7754-4dad-b445-8877b0d7fb5d"},{"title":"7","price":"7","img":"7","id":"f551e15f-7c02-462a-a53e-6338e355638a"},{"title":"z","price":"2","img":"z","id":"65e9fa97-925d-4082-acc6-eb580162554d"},{"title":"React","price":"122","img":"111","id":"7fadaa3e-d104-4878-b0bc-0af3057ad6f9"},{"title":"3","price":"3","img":"3","id":"58fb2c62-1d7e-4743-a177-b6ed60dcb13a"},{"title":"Vue","price":"250000","img":"https://miro.medium.com/max/400/1*wqYF-8Dmh7LhtLkKfERc3Q.png","id":"cbce3f97-1654-4500-b03a-d59c3e768a37"}]
+[
+  {
+    "title": "Vue",
+    "price": "250000",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1024px-Vue.js_Logo_2.svg.png",
+    "id": "cbce3f97-1654-4500-b03a-d59c3e768a37"
+  }
+]
