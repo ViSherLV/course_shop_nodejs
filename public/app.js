@@ -1,9 +1,9 @@
-const toCurrency = (price) => {
-  return new Intl.NumberFormat("ru-RU", {
-    currency: "rub",
-    style: "currency",
-  }).format(price);
-};
+// const toCurrency = (price) => {
+//   return new Intl.NumberFormat("ru-RU", {
+//     currency: "rub",
+//     style: "currency",
+//   }).format(price);
+// };
 
 const toDate = (date) => {
   return new Intl.DateTimeFormat("ru-RU", {
@@ -16,9 +16,9 @@ const toDate = (date) => {
   }).format(new Date(date));
 };
 
-document.querySelectorAll(".price").forEach((node) => {
-  node.textContent = toCurrency(node.textContent);
-});
+// document.querySelectorAll(".price").forEach((node) => {
+//   node.textContent = toCurrency(node.textContent);
+// });
 
 document.querySelectorAll(".date").forEach((node) => {
   node.textContent = toDate(node.textContent);

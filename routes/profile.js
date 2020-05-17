@@ -13,23 +13,23 @@ router.get("/", auth, async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   console.log("ss");
-  // try {
-  //   const user = await User.findById(req.user._id);
+  try {
+    const user = await User.findById(req.user._id);
 
-  //   const toChange = {
-  //     name: req.body.name,
-  //   };
-  //   console.log(req.file);
-  //   if (req.file) {
-  //     toChange.avatarUrl = req.file.path;
-  //   }
+    const toChange = {
+      name: req.body.name,
+    };
+    console.log(req.file);
+    if (req.file) {
+      toChange.avatarUrl = req.file.path;
+    }
 
-  //   Object.assign(user, toChange);
-  //   await user.save();
-  //   res.redirect("/profile");
-  // } catch (e) {
-  //   console.log(e);
-  // }
+    Object.assign(user, toChange);
+    await user.save();
+    res.redirect("/profile");
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 module.exports = router;
