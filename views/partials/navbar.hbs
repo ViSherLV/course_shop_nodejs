@@ -1,32 +1,58 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Приложение курсов</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+<nav style="position: fixed;margin-top:-40px;z-index:5">
+  <div class="nav-wrapper teal lighten-2">
+    <img src="https://i.ibb.co/4wqdzzJ/hotpng-com.png" style="width: 65px; margin-left:38%; margin-right:5px; ">
+    <a href="/" class="brand-logo lighten-2">Chatbots.Studio courses shop (PDP edition)</a>
+  </div>
+</nav>
+<nav style="display:flex;flex-direction:column; position:fixed;z-index:2;width:200px; height:inherit; margin-top:24px">
+  <div class="nav-wrapper teal lighten-2 nav-right " style="display: flex; flex-direction:column;padding:0">
+    <ul id="nav-mobile" class="right hide-on-med-and-down" style="display: flex; flex-direction:column">
 
       {{#if isHome}}
-        <li class="active"><a href="/">Главная</a></li>
+      <li class="active"><a href="/">Main</a></li>
       {{else}}
-        <li><a href="/">Главная</a></li>
+      <li><a href="/">Main</a></li>
       {{/if}}
 
       {{#if isCourses}}
-        <li class="active"><a href="/courses">Курсы</a></li>
+      <li class="active"><a href="/courses">Courses</a></li>
       {{else}}
-        <li><a href="/courses">Курсы</a></li>
+      <li><a href="/courses">Courses</a></li>
       {{/if}}
 
+      {{#if isAuth}}
       {{#if isAdd}}
-        <li class="active"><a href="/add">Добавить курс</a></li>
+      <li class="active"><a href="/add">Add course</a></li>
       {{else}}
-        <li><a href="/add">Добавить курс</a></li>
-      {{/if}} 
+      <li><a href="/add">Add course</a></li>
+      {{/if}}
+
+      {{#if isProfile}}
+      <li class="active"><a href="/profile">Profile</a></li>
+      {{else}}
+      <li><a href="/profile">Profile</a></li>
+      {{/if}}
 
       {{#if isCard}}
-        <li class="active"><a href="/card">Коризна</a></li>
+      <li class="active"><a href="/card">Cart</a></li>
       {{else}}
-        <li><a href="/card">Коризна</a></li>
-      {{/if}} 
-      
+      <li><a href="/card">Cart</a></li>
+      {{/if}}
+
+      {{#if isOrder}}
+      <li class="active"><a href="/orders">Orders</a></li>
+      {{else}}
+      <li><a href="/orders">Orders</a></li>
+      {{/if}}
+
+      <li><a href="/auth/logout">Logout</a></li>
+      {{else}}
+      {{#if isLogin}}
+      <li class="active"><a href="/auth/login#login">Log in</a></li>
+      {{else}}
+      <li><a href="/auth/login#login">Log in</a></li>
+      {{/if}}
+      {{/if}}
     </ul>
   </div>
 </nav>
