@@ -1,40 +1,44 @@
-const {body} = require('express-validator/check') 
-const User = require('../models/user')
+const { body } = require("express-validator/check");
+const User = require("../models/user");
 
 exports.registerValidators = [
-  body('email')
-    .isEmail().withMessage('Введите корректный email')
-    .custom(async (value, {req}) => {
+  body("email")
+    .isEmail()
+    .withMessage("Please enter a valid email")
+    .custom(async (value, { req }) => {
       try {
-        const user = await User.findOne({ email: value })
+        const user = await User.findOne({ email: value });
         if (user) {
-          return Promise.reject('Такой email уже занят')
+          return Promise.reject("This email is already taken");
         }
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     })
     .normalizeEmail(),
-  body('password', 'Пароль должен быть минимум 6 символов')
-    .isLength({min: 6, max: 56})
+  body("password", "Password must be at least 6 characters")
+    .isLength({ min: 6, max: 56 })
     .isAlphanumeric()
     .trim(),
-  body('confirm')
-    .custom((value, {req}) => {
+  body("confirm")
+    .custom((value, { req }) => {
       if (value !== req.body.password) {
-        throw new Error('Пароли должны совпадать')
+        throw new Error("Passwords must match");
       }
-      return true
+      return true;
     })
     .trim(),
-  body('name')
-    .isLength({min: 3}).withMessage('Имя должно быть минимум 3 символа')
-    .trim()
-]
-
+  body("name")
+    .isLength({ min: 3 })
+    .withMessage("Name must be at least 3 characters")
+    .trim(),
+];
 
 exports.courseValidators = [
-  body('title').isLength({min: 3}).withMessage('Минимальная длинна названия 3 символа').trim(),
-  body('price').isNumeric().withMessage('Введите корректную цену'),
-  body('img', 'Введите корректный Url картинки').isURL()
-]
+  body("title")
+    .isLength({ min: 3 })
+    .withMessage("Minimum title length 3 characters")
+    .trim(),
+  body("price").isNumeric().withMessage("Enter the correct price"),
+  body("img", "Enter the correct url of the picture").isURL(),
+];

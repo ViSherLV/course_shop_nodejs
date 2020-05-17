@@ -108,7 +108,7 @@ router.get("/password/:token", async (req, res) => {
       return res.redirect("/auth/login");
     } else {
       res.render("auth/password", {
-        title: "Восстановить доступ",
+        title: "Restore access",
         error: req.flash("error"),
         userId: user._id.toString(),
         token: req.params.token,
@@ -123,7 +123,7 @@ router.post("/reset", (req, res) => {
   try {
     crypto.randomBytes(32, async (err, buffer) => {
       if (err) {
-        req.flash("error", "Что-то пошло не так, повторите попытку позже");
+        req.flash("error", "Something went wrong, try again later");
         return res.redirect("/auth/reset");
       }
 
@@ -137,7 +137,7 @@ router.post("/reset", (req, res) => {
         await transporter.sendMail(resetEmail(candidate.email, token));
         res.redirect("/auth/login");
       } else {
-        req.flash("error", "Такого email нет");
+        req.flash("error", "There is no such email");
         res.redirect("/auth/reset");
       }
     });
@@ -161,7 +161,7 @@ router.post("/password", async (req, res) => {
       await user.save();
       res.redirect("/auth/login");
     } else {
-      req.flash("loginError", "Время жизни токена истекло");
+      req.flash("loginError", "Token expired");
       res.redirect("/auth/login");
     }
   } catch (e) {
