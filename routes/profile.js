@@ -5,7 +5,7 @@ const router = Router();
 
 router.get("/", auth, async (req, res) => {
   res.render("profile", {
-    title: "Профиль",
+    title: "Profile",
     isProfile: true,
     user: req.user.toObject(),
   });
