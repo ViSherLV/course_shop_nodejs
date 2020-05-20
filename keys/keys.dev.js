@@ -7,9 +7,3 @@ module.exports = {
   EMAIL_FROM: "cbscourses@email.com",
   BASE_URL: "http://localhost:3000",
 };
-
-if (process.env.NODE_ENV === "production") {
-  module.exports = require("./keys.prod.js");
-} else {
-  module.exports = require("./keys.dev.js");
-}
